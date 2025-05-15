@@ -3,9 +3,9 @@ using UnityEngine;
 public class Hide_UI : MonoBehaviour
 {
     public Transform xrCamera; // Cámara del XR Rig
-    public float distanceBehind = 2f;
-    public float distanceInFront = 2f;
-    public float height = 1.5f;
+    public float distanceBehind = 0.5f;
+    public float distanceInFront = 0.5f;
+    public float height = 1f;
     public KeyCode toggleKey = KeyCode.H; // Tecla para cambiar la posición de la UI
 
     private bool isBehind = true; // Estado inicial: detrás del jugador
