@@ -7929,7 +7929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f6f11d3a24962b96fb3d5ddd44236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xrCamera: {fileID: 0}
+  xrCamera: {fileID: 542343875}
   distanceBehind: 2
   distanceInFront: 2
   height: 1.5
@@ -10072,9 +10072,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759604080}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 0.10000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1098032234}
@@ -14385,7 +14385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5366d708f3313624e85a37c502099634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  esfera: {fileID: 759604080}
+  circuloPrefab: {fileID: 759604080}
 --- !u!64 &1098032236
 MeshCollider:
   m_ObjectHideFlags: 0

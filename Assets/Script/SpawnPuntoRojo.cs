@@ -22,13 +22,8 @@ public class CirculoEnCerebro : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)) // Cualquier tecla
+        if (Input.anyKeyDown) // Cualquier tecla
         {
-            if (circuloActual != null)
-            {
-                Destroy(circuloActual);
-            }
-
             ColocarCirculoEnSuperficie();
         }
     }
@@ -38,14 +33,12 @@ public class CirculoEnCerebro : MonoBehaviour
         const int intentosMaximos = 50;
         for (int i = 0; i < intentosMaximos; i++)
         {
-            // Generar un punto aleatorio dentro de los bounds del cerebro
             Vector3 puntoAleatorio = cerebroCollider.bounds.center + new Vector3(
                 Random.Range(-cerebroCollider.bounds.extents.x, cerebroCollider.bounds.extents.x),
                 Random.Range(-cerebroCollider.bounds.extents.y, cerebroCollider.bounds.extents.y),
                 Random.Range(-cerebroCollider.bounds.extents.z, cerebroCollider.bounds.extents.z)
             );
 
-            // Lanza un rayo desde fuera del cerebro hacia adentro
             Vector3 direccion = (cerebroCollider.bounds.center - puntoAleatorio).normalized;
 
             if (Physics.Raycast(puntoAleatorio, direccion, out RaycastHit hit, 2f * cerebroCollider.bounds.extents.magnitude))
@@ -53,10 +46,20 @@ public class CirculoEnCerebro : MonoBehaviour
                 if (hit.collider == cerebroCollider)
                 {
                     Vector3 posicionFinal = hit.point;
-                    Quaternion rotacion = Quaternion.LookRotation(hit.normal);
+                    Quaternion rotacionFinal = Quaternion.LookRotation(hit.normal);
 
-                    circuloActual = Instantiate(circuloPrefab, posicionFinal, rotacion);
-                    circuloActual.transform.parent = transform;
+                    if (circuloActual == null)
+                    {
+                        circuloActual = Instantiate(circuloPrefab, posicionFinal, rotacionFinal);
+                        circuloActual.transform.parent = transform;
+                        circuloActual.transform.localScale = new Vector3((float)0.1, (float)0.1, (float)0.1);
+                    }
+                    else
+                    {
+                        circuloActual.transform.position = posicionFinal;
+                        circuloActual.transform.rotation = rotacionFinal;
+                    }
+
                     return;
                 }
             }
