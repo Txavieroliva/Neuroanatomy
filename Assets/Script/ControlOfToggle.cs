@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
  
@@ -14,12 +14,17 @@ public class MultiUIToggler : MonoBehaviour
     public List<ToggleUI> toggleUIList;
 
     void Start()
+     
     {
         foreach (var item in toggleUIList)
         {
             item.toggle.onValueChanged.AddListener((bool isOn) =>
             {
                 item.targetUI.SetActive(isOn);
+            });
+            item.toggle.onValueChanged.AddListener((bool isOff) =>
+            {
+                item.targetUI.SetActive(isOff);
             });
 
             // Inicializar visibilidad
