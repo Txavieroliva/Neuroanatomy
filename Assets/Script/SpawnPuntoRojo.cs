@@ -9,7 +9,7 @@ public class CirculoEnCerebro : MonoBehaviour
 
     void Start()
     {
-        cerebroCollider = GetComponent<Collider>();
+        /*cerebroCollider = GetComponent<Collider>();
 
         if (cerebroCollider == null)
         {
@@ -17,7 +17,7 @@ public class CirculoEnCerebro : MonoBehaviour
             return;
         }
 
-        ColocarCirculoEnSuperficie();
+        ColocarCirculoEnSuperficie();*/
     }
 
     void Update()
@@ -28,7 +28,7 @@ public class CirculoEnCerebro : MonoBehaviour
         }
     }
 
-    void ColocarCirculoEnSuperficie()
+    public void ColocarCirculoEnSuperficie()
     {
         const int intentosMaximos = 50;
         for (int i = 0; i < intentosMaximos; i++)
