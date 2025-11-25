@@ -5,20 +5,19 @@ public class SpawnButton : MonoBehaviour
 
 
 {
-    [Header("Prefabs a instanciar (m�x. 8)")]
+    [Header("Prefabs a instanciar (max. 8)")]
     public GameObject[] prefabs;
 
-    [Header("Punto donde aparecer�n los objetos")]
+    [Header("Punto donde aparecen los objetos")]
     public Transform spawnPoint;
     public GameObject ficha;
 
     public bool activated = false;
-    public CirculoEnCerebro cerebro;
+   
 
     void Awake()
     {
-        cerebro = FindAnyObjectByType<CirculoEnCerebro>();
-        cerebro = GetComponent<CirculoEnCerebro>();
+    
     }
 
 
@@ -34,12 +33,7 @@ public class SpawnButton : MonoBehaviour
         }
 
 
-        /*if (prefabs == null || prefabs.Length == 0)
-        {
-            Debug.LogWarning("No hay prefabs asignados en el bot�n.");
-            return;
-        }*/
-
+        
     
         
         int randomIndex = Random.Range(0, prefabs.Length);
@@ -48,7 +42,7 @@ public class SpawnButton : MonoBehaviour
 
         ficha = Instantiate(selectedPrefab, spawnPoint.position, spawnPoint.rotation);
         Debug.Log($"Instanciado: {selectedPrefab.name}");
-        cerebro.ColocarCirculoEnSuperficie();   
+           
 
             
         

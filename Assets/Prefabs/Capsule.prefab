@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5d5d306715452418fb9d35dbe9ead5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circuloActual: {fileID: 0}
+  lobulo: 1
+  lobuloActual: {fileID: 0}
