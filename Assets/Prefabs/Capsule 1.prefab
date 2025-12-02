@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1227786729523356941}
   - component: {fileID: 474948821757513148}
   - component: {fileID: 127185012942045920}
-  - component: {fileID: -1276287566237396083}
+  - component: {fileID: -3944232255932480555}
   m_Layer: 0
   m_Name: Capsule 1
   m_TagString: Untagged
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1276287566237396083
+--- !u!114 &-3944232255932480555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5d5d306715452418fb9d35dbe9ead5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circuloActual: {fileID: 0}
   lobulo: 2
   lobuloActual: {fileID: 0}

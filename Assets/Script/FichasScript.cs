@@ -4,7 +4,7 @@ public class FichasScript : MonoBehaviour
 {
   
     
-    public GameObject circuloActual;
+    
     public int lobulo;
     public GameObject lobuloActual;
 
@@ -28,56 +28,56 @@ public class FichasScript : MonoBehaviour
         {
             case 1:
             {
-                lobuloActual = GameObject.Find("Lobulo 1");
+                lobuloActual = GameObject.Find("Frontal Lobe R");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 2:
             {
-                lobuloActual = GameObject.Find("Lobulo 2");
+                lobuloActual = GameObject.Find("Parietal Lobe R");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 3:
             {
-                lobuloActual = GameObject.Find("Lobulo 3");
+                lobuloActual = GameObject.Find("Occipital Lobe R");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 4:
             {
-                lobuloActual = GameObject.Find("Lobulo 4");
+                lobuloActual = GameObject.Find("Temporal Lobe R");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 5:
             {
-                lobuloActual = GameObject.Find("Lobulo 5");
+                lobuloActual = GameObject.Find("Frontal Lobe L");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 6:
             {
-                lobuloActual = GameObject.Find("Lobulo 6");
+                lobuloActual = GameObject.Find("Parietal Lobe L");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 7:
             {
-                lobuloActual = GameObject.Find("Lobulo 7");
+                lobuloActual = GameObject.Find("Occipital Lobe L");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;
             }
             case 8:
             {
-                lobuloActual = GameObject.Find("Lobulo 8");
+                lobuloActual = GameObject.Find("Temporal Lobe L");
                 var script = lobuloActual.GetComponent<Lobulos>();
                 script.CrearCirculo();
                 break;

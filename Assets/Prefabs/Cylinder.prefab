@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3478635472400063669}
   - component: {fileID: 3749037316705191434}
   - component: {fileID: 280292618464356187}
-  - component: {fileID: 726233902546838185}
+  - component: {fileID: 7775522204448538062}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &726233902546838185
+--- !u!114 &7775522204448538062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5d5d306715452418fb9d35dbe9ead5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circuloActual: {fileID: 0}
   lobulo: 6
   lobuloActual: {fileID: 0}

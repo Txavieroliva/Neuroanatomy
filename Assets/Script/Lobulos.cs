@@ -8,15 +8,16 @@ public class Lobulos : MonoBehaviour
     [Header("Prefab del circulo rojo")]
     public GameObject circuloPrefab;
 
-    private GameObject circuloActual;
+    public GameObject puntoVerdadero;
+    public GameObject puntoFalso;
 
     public void CrearCirculo()
     {
-        if (circuloActual != null)
-            Destroy(circuloActual);
+        if (puntoVerdadero != null)
+            Destroy(puntoVerdadero);
 
         
-        circuloActual = Instantiate(
+            puntoVerdadero = Instantiate(
             circuloPrefab, 
             anchor.position, 
             anchor.rotation, 
@@ -24,10 +25,25 @@ public class Lobulos : MonoBehaviour
         );
     }
 
+    public void CrearCirculoFalso()
+    {
+        if (puntoFalso != null)
+            Destroy(puntoFalso);
+
+        
+            puntoFalso = Instantiate(
+            circuloPrefab, 
+            anchor.position, 
+            anchor.rotation, 
+            this.transform 
+        );
+    }
+
+
     public void EliminarCirculo()
     {
-        if (circuloActual != null)
-            Destroy(circuloActual);
+        if (puntoVerdadero != null)
+            Destroy(puntoVerdadero);
     }
     
 }
