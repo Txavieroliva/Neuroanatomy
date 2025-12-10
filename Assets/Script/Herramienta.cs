@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class HerramientaDiagnostico : MonoBehaviour
 {
-    public bool puedeDiagnosticar = true;         
-    public Renderer rend;                         
-   
+    public bool puedeDiagnosticar = true;
+    public Renderer rend;
+    
+
+    public Lobulos lobuloDetectado;      
+
     private void Start()
     {
         if (rend == null)
@@ -13,34 +16,46 @@ public class HerramientaDiagnostico : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!puedeDiagnosticar)
-            return;  
+        if (!puedeDiagnosticar) return;
 
         Lobulos lobulo = other.GetComponent<Lobulos>();
 
         if (lobulo != null)
         {
-            
-            if (lobulo.puntoVerdadero != null && lobulo.puntoFalso == null)
-            {
-               
-                CambiarColor(Color.green);
-            }
-            else if (lobulo.puntoVerdadero == null && lobulo.puntoFalso != null)
-            {
-                
-                CambiarColor(Color.yellow);
-            }
-            else if (lobulo.puntoVerdadero == null && lobulo.puntoFalso == null)
-            {
-                
-                CambiarColor(Color.red);
-            }
-
-           
-            puedeDiagnosticar = false;  
+            lobuloDetectado = lobulo; 
+            EjecutarDiagnostico();   
         }
     }
+
+
+   
+
+    public void EjecutarDiagnostico()
+    {
+        if (!puedeDiagnosticar || lobuloDetectado == null) return;
+
+      
+        if (lobuloDetectado.puntoVerdadero != null && lobuloDetectado.puntoFalso == null)
+        {
+            CambiarColor(Color.green);
+        }
+        else if (lobuloDetectado.puntoVerdadero == null && lobuloDetectado.puntoFalso != null)
+        {
+            CambiarColor(Color.yellow);
+        }
+        else if (lobuloDetectado.puntoVerdadero == null && lobuloDetectado.puntoFalso == null)
+        {
+            CambiarColor(Color.red);
+        }
+
+        
+        puedeDiagnosticar = false;
+
+       
+    }
+
+
+  
 
     void CambiarColor(Color c)
     {
@@ -48,9 +63,12 @@ public class HerramientaDiagnostico : MonoBehaviour
             rend.material.color = c;
     }
 
- 
+    
+
     public void ReactivarHerramienta()
     {
         puedeDiagnosticar = true;
+        lobuloDetectado = null;
+        CambiarColor(Color.white); 
     }
 }
